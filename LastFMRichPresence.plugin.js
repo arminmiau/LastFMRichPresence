@@ -476,7 +476,7 @@ Please visit <a href="https://github.com/dimdenGD/LastFMRichPresence" target="_b
         }
         let obj = {
             application_id: ClientID,
-            name: (this.settings.artistActivityName && this.trackData.artist['#text']) ? this.trackData.name : "some music",
+            name: (this.settings.artistActivityName && this.trackData.name) ? this.trackData.name + ' on YT Music' : "YT Music",
             details: this.trackData?.artist?.['#text'],
             state: this.trackData?.album?.['#text'] ? (this.artistBeforeAlbum ? `${this.trackData?.artist?.['#text']} – ${this.trackData.album['#text']}` : this.trackData.album['#text']) : this.trackData?.name,
             timestamps: { start: this.startPlaying ? Math.floor(this.startPlaying / 1000) : Math.floor(Date.now() / 1000) },
