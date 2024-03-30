@@ -476,9 +476,9 @@ Please visit <a href="https://github.com/dimdenGD/LastFMRichPresence" target="_b
         }
         let obj = {
             application_id: ClientID,
-            name: (this.settings.artistActivityName && this.trackData.artist['#text']) ? this.trackData.artist['#text'] : "some music",
-            details: this.trackData.name,
-            state: this.trackData?.album?.['#text'] ? (this.artistBeforeAlbum ? `${this.trackData?.artist?.['#text']} – ${this.trackData.album['#text']}` : this.trackData.album['#text']) : this.trackData?.artist?.['#text'],
+            name: (this.settings.artistActivityName && this.trackData.artist['#text']) ? this.trackData.name : "some music",
+            details: this.trackData?.artist?.['#text'],
+            state: this.trackData?.album?.['#text'] ? (this.artistBeforeAlbum ? `${this.trackData?.artist?.['#text']} – ${this.trackData.album['#text']}` : this.trackData.album['#text']) : this.trackData?.name,
             timestamps: { start: this.startPlaying ? Math.floor(this.startPlaying / 1000) : Math.floor(Date.now() / 1000) },
             assets: this.settings.assetIcon ? {
                 small_image: this.trackData.youtubeUrl ? await this.getAsset("youtube") : this.trackData.soundcloudUrl ? await this.getAsset("soundcloud") : await this.getAsset("lastfm"),
